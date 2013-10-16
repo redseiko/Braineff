@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_editor_compile"
+        android:showAsAction="always"
+        android:title="@string/menu_editor_compile"
+        android:titleCondensed="@string/menu_editor_compile_condensed"/>
+    <item
+        android:id="@+id/menu_editor_save"
+        android:showAsAction="never"
+        android:title="@string/menu_editor_save"
+        android:titleCondensed="@string/menu_editor_save_condensed"/>
+    <item
+        android:id="@+id/menu_editor_load"
+        android:showAsAction="never"
+        android:title="@string/menu_editor_load"
+        android:titleCondensed="@string/menu_editor_load_condensed"/>
+
+</menu>

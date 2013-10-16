@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/file_filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:padding="5dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:hint="@string/editor_filename_hint"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/file_contents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top|left"
+        android:inputType="text|textMultiLine|textNoSuggestions"
+        android:scrollHorizontally="true"
+        android:scrollbars="horizontal|vertical"
+        android:textIsSelectable="true"
+        android:textSize="24sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*" >
+
+        <TableRow style="@android:attr/buttonBarStyle" >
+
+            <Button
+                android:id="@+id/kb_inc_ptr"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_inc_ptr" />
+
+            <Button
+                android:id="@+id/kb_dec_ptr"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_dec_ptr" />
+
+            <Button
+                android:id="@+id/kb_jump_forward"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_jump_forward" />
+
+            <Button
+                android:id="@+id/kb_jump_backward"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_jump_backward" />
+
+            <Button
+                android:id="@+id/kb_tab"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_tab" />
+
+            <Button
+                android:id="@+id/kb_backspace"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_backspace" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/kb_inc_data"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_inc_data" />
+
+            <Button
+                android:id="@+id/kb_dec_data"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_dec_data" />
+
+            <Button
+                android:id="@+id/kb_output_data"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_output_data" />
+
+            <Button
+                android:id="@+id/kb_input_data"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_input_data" />
+
+            <Button
+                android:id="@+id/kb_space"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_space" />
+
+            <Button
+                android:id="@+id/kb_enter"
+                style="@android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/kb_enter" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

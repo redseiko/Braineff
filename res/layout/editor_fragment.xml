@@ -8,22 +8,29 @@
         android:id="@+id/file_filename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textIsSelectable="true"
-        android:padding="5dp"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
         android:hint="@string/editor_filename_hint"
-        android:textSize="20sp" />
+        android:padding="10dp"
+        android:textIsSelectable="true"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/file_contents"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="top|left"
+        android:background="@android:color/transparent"
+        android:gravity="start"
         android:inputType="text|textMultiLine|textNoSuggestions"
+        android:padding="10dp"
         android:scrollHorizontally="true"
-        android:scrollbars="horizontal|vertical"
+        android:scrollbars="vertical"
         android:textIsSelectable="true"
         android:textSize="24sp" />
 

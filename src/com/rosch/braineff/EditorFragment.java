@@ -34,13 +34,10 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 	{
 		View view = inflater.inflate(R.layout.editor_fragment, container, false);
 		
-		String filename = "";
-		String contents = "";		
+		EditText fileContentsEt = (EditText) view.findViewById(R.id.file_contents);
 		
-		((TextView) view.findViewById(R.id.file_filename)).setText(filename);
-		((EditText) view.findViewById(R.id.file_contents)).setText(contents);
-		
-		((EditText) view.findViewById(R.id.file_contents)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "DroidSansMono.ttf"));
+		fileContentsEt.setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "DroidSansMono.ttf"));
+		fileContentsEt.setHorizontallyScrolling(true);
 		
 		// Easier to set each Buttons' listener than to setup a recursive loop.
 		view.findViewById(R.id.kb_inc_ptr).setOnClickListener(this);

@@ -1,6 +1,7 @@
 package com.rosch.braineff;
 
 import android.app.Fragment;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -38,6 +39,8 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 		
 		((TextView) view.findViewById(R.id.file_filename)).setText(filename);
 		((EditText) view.findViewById(R.id.file_contents)).setText(contents);
+		
+		((EditText) view.findViewById(R.id.file_contents)).setTypeface(Typeface.createFromAsset(getActivity().getAssets(), "DroidSansMono.ttf"));
 		
 		// Easier to set each Buttons' listener than to setup a recursive loop.
 		view.findViewById(R.id.kb_inc_ptr).setOnClickListener(this);

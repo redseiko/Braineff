@@ -56,8 +56,6 @@ public class InterpreterFragment extends Fragment
 			
 			mLoopBegins = new ArrayList<Integer>();
 			mLoopEnds = new ArrayList<Integer>();
-			
-			Toast.makeText(getActivity(), "Compiling...", Toast.LENGTH_SHORT).show();
 		}
 		
 		@Override

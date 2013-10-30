@@ -3,8 +3,10 @@ package com.rosch.braineff;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -15,16 +17,25 @@ public class ConsoleFragment extends Fragment implements InterpreterFragment.Inp
 	{
 		View view = inflater.inflate(R.layout.console_fragment, container, false);
 		
-		view.findViewById(R.id.console_btn_run).setOnClickListener(new OnClickListener()
-		{			
-			@Override
-			public void onClick(View view)
-			{
-				runProgram();
-			}
-		});
-		
 		return view;
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+	{
+		inflater.inflate(R.menu.console_fragment, menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		if (item.getItemId() == R.id.menu_console_run)
+		{
+			runProgram();
+			return true;
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 	
 	public void runProgram()

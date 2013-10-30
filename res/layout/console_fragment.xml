@@ -7,35 +7,45 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
         android:text="@string/console_output_title"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/console_output"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_weight="1"
+        android:background="#ffefefef"
         android:gravity="top|left"
-        android:padding="5dp"
+        android:padding="8dp"
         android:scrollHorizontally="true"
         android:scrollbars="horizontal|vertical"
-        android:textIsSelectable="true"
-        android:textSize="24sp"
+        android:textSize="14sp"
         android:typeface="monospace" />
-    
-    <LinearLayout 
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        
-        <Button
-            android:id="@+id/console_btn_run"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25"
-            android:text="@string/console_btn_run" />
-        
-    </LinearLayout>
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="@string/console_input_title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/console_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#ffefefef"
+        android:inputType="text|textNoSuggestions"
+        android:padding="8dp"
+        android:typeface="monospace"
+        android:textSize="14sp" />
 
 </LinearLayout>

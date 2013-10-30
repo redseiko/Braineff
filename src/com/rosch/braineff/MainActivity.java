@@ -4,6 +4,7 @@ import java.io.File;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -30,14 +31,6 @@ public class MainActivity extends Activity implements EditorFragment.EditorFragm
 			transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 			transaction.commit();
 		}
-		
-		if (getFragmentManager().findFragmentByTag("interpreter_fragment") == null)
-		{
-			FragmentTransaction transaction = getFragmentManager().beginTransaction();
-			
-			transaction.add(new InterpreterFragment(), "interpreter_fragment");
-			transaction.commit();
-		}
 	}
 	
 	@Override
@@ -60,27 +53,12 @@ public class MainActivity extends Activity implements EditorFragment.EditorFragm
 	@Override
 	public boolean onCompileProgram(Bundle arguments)
 	{	
-		InterpreterFragment interpreterFragment = (InterpreterFragment) getFragmentManager().findFragmentByTag("interpreter_fragment");
-		interpreterFragment.compileFile(arguments.getString("file_contents"));
+		Intent intent = new Intent(this, InterpreterActivity.class);
 		
-		ConsoleFragment consoleFragment = (ConsoleFragment) getFragmentManager().findFragmentByTag("console_fragment");
+		intent.putExtras(arguments);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		
-		if (consoleFragment == null)
-		{
-			consoleFragment = new ConsoleFragment();
-			consoleFragment.setArguments(arguments);
-			
-			FragmentTransaction transaction = getFragmentManager().beginTransaction();
-	
-			transaction.addToBackStack(null);
-			transaction.replace(R.id.fragment_container, consoleFragment, "console_fragment");
-			transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-			transaction.commit();
-		}
-		else
-		{
-			consoleFragment.getArguments().putAll(arguments);
-		}
+		startActivity(intent);
 		
 		return false;
 	}

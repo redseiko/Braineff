@@ -1,6 +1,7 @@
 package com.rosch.braineff;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -16,11 +17,6 @@ import android.widget.TextView;
 public class EditorFragment extends Fragment implements View.OnClickListener,
 	SaveFileFragment.OnSaveFileSuccessListener, LoadFileFragment.OnLoadFileSuccessListener
 {
-	public interface EditorFragmentHandler
-	{
-		public boolean onCompileProgram(Bundle arguments);
-	}
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -65,11 +61,6 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
-		EditorFragmentHandler listener = (EditorFragmentHandler) getActivity();
-		
-		if (listener == null)
-			return super.onOptionsItemSelected(item);
-		
 		switch (item.getItemId())
 		{
 		case R.id.menu_editor_compile:
@@ -85,19 +76,19 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 			break;
 		}
 		
-		return true;
+		return super.onOptionsItemSelected(item);
 	}
 		
-	private boolean onEditorCompile()
+	private void onEditorCompile()
 	{
-		EditorFragmentHandler handler = (EditorFragmentHandler) getActivity();		
-		EditText sourceView = (EditText) getView().findViewById(R.id.file_contents);
+		Intent intent = new Intent(getActivity(), InterpreterActivity.class);
 		
-		Bundle arguments = new Bundle();		
-		arguments.putString("file_contents", sourceView.getText().toString());
+		intent.putExtra("file_contents", ((EditText) getView().findViewById(R.id.file_contents)).getText().toString());
+		//intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		
-		return handler.onCompileProgram(arguments);
+		startActivity(intent);
 		
+		getActivity().overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
 	}
 	
 	private boolean onEditorSave()

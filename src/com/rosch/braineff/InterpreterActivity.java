@@ -27,7 +27,14 @@ public class InterpreterActivity extends Activity
 		getFragmentManager()
 			.beginTransaction()
 			.replace(android.R.id.content, fragment, "console_fragment")
-			.addToBackStack(null)
 			.commit();
+	}
+	
+	@Override
+	public void onBackPressed()
+	{
+		super.onBackPressed();
+		
+		overridePendingTransition(R.anim.left_slide_in, R.anim.right_slide_out);
 	}
 }

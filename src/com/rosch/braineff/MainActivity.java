@@ -4,13 +4,12 @@ import java.io.File;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends Activity implements EditorFragment.EditorFragmentHandler
+public class MainActivity extends Activity
 {
 	@Override
 	public void onCreate(Bundle savedInstanceState)
@@ -48,18 +47,5 @@ public class MainActivity extends Activity implements EditorFragment.EditorFragm
 	public boolean onOptionsItemSelected(MenuItem item)
 	{			
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public boolean onCompileProgram(Bundle arguments)
-	{	
-		Intent intent = new Intent(this, InterpreterActivity.class);
-		
-		intent.putExtras(arguments);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		
-		startActivity(intent);
-		
-		return false;
 	}
 }

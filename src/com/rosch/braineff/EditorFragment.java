@@ -83,9 +83,7 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 	{
 		Intent intent = new Intent(getActivity(), InterpreterActivity.class);
 		
-		intent.putExtra("file_contents", ((EditText) getView().findViewById(R.id.file_contents)).getText().toString());
-		//intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		
+		intent.putExtra("file_contents", ((EditText) getView().findViewById(R.id.file_contents)).getText().toString());		
 		startActivity(intent);
 		
 		getActivity().overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);

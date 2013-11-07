@@ -66,6 +66,8 @@ public class ConsoleFragment extends Fragment implements InterpreterFragment.Inp
 	@Override
 	public String onInterpreterInput()
 	{
-		return null;
+		TextView consoleInput = (TextView) getView().findViewById(R.id.console_input);
+		
+		return consoleInput.getText().toString();
 	}
 }

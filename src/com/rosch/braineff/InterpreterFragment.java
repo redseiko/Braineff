@@ -123,6 +123,14 @@ public class InterpreterFragment extends Fragment
 	public class ExecuteCommandsAsyncTask extends AsyncTask<Integer, Integer, Integer>
 	{		
 		private int counter = mExecuteCounter++;
+		private String mInput;
+		
+		public ExecuteCommandsAsyncTask(String input)
+		{
+			super();
+			
+			mInput = input;
+		}
 		
 		@Override
 		protected Integer doInBackground(Integer... params)
@@ -187,7 +195,17 @@ public class InterpreterFragment extends Fragment
 					
 				case INPUT_BYTE:
 					{
-						
+						if (mInput.length() > 0)
+						{
+							mCells[mCellIndex] = mInput.charAt(0);
+							mInput = mInput.substring(1);
+						}
+						else
+						{
+							isActive = false;
+							
+							// TODO: add pause/resume.
+						}
 					}
 					break;
 					
@@ -280,7 +298,7 @@ public class InterpreterFragment extends Fragment
 		
 		mListener = listener;
 		
-		mExecuteTask = new ExecuteCommandsAsyncTask();
+		mExecuteTask = new ExecuteCommandsAsyncTask(mListener.onInterpreterInput());
 		mExecuteTask.execute();
 	}
 }

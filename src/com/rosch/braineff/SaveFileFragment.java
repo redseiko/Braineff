@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -26,6 +27,7 @@ public class SaveFileFragment extends DialogFragment implements OnShowListener, 
 		public void onSaveFileSuccess(Bundle arguments);		
 	}
 	
+	@SuppressLint("InflateParams")
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState)
 	{

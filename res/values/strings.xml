@@ -31,7 +31,9 @@
     <string name="save_file_filename_hint">untitled.bf</string>
     <string name="save_file_toast_success">File successfully saved as: %s</string>
     <string name="save_file_toast_failure">An error occurred while saving the file: %s</string>
-    <string name="load_file_fragment_title">Load file&#8230;</string>    
+    <string name="save_file_toast_storage_failure">"Unable to access mounted storage!\nLoading and saving files is unavailable."</string>
+    
+    <string name="load_file_fragment_title">Load file&#8230;</string>
     <string name="load_file_msg_no_files">No files found in the /Braineff folder.</string>
 	<string name="load_file_toast_success">File successfully loaded: %s</string>
 	<string name="load_file_toast_failure">An error occurred while loading the file: %s</string>

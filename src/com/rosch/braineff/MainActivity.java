@@ -1,11 +1,8 @@
 package com.rosch.braineff;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,10 +12,6 @@ public class MainActivity extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		
-		// Ensure the shared storage folder is created.
-		File directory = new File(Environment.getExternalStorageDirectory() + "//Braineff//");
-		directory.mkdir();
 		
 		setContentView(R.layout.main_activity);
 		

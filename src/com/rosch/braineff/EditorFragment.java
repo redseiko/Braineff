@@ -1,9 +1,12 @@
 package com.rosch.braineff;
 
+import java.io.File;
+
 import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,14 +16,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditorFragment extends Fragment implements View.OnClickListener,
 	SaveFileFragment.OnSaveFileSuccessListener, LoadFileFragment.OnLoadFileSuccessListener
 {
+	private boolean mCanWriteToStorage = false;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		
+		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
+		{
+			// Ensure the shared storage folder is created.
+			File directory = new File(Environment.getExternalStorageDirectory() + File.separator + "Braineff" + File.separator);
+			
+			if (directory.mkdir() || directory.isDirectory())			
+				mCanWriteToStorage = true;
+		}
 		
 		setHasOptionsMenu(true);
 	}
@@ -53,9 +68,27 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 	}
 	
 	@Override
+	public void onStart()
+	{
+		super.onStart();
+		
+		if (mCanWriteToStorage == false)
+		{
+			Toast.makeText(getActivity(), R.string.save_file_toast_storage_failure, Toast.LENGTH_LONG)
+				.show();
+		}
+	}
+	
+	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
 	{
 		inflater.inflate(R.menu.editor_fragment, menu);
+		
+		if (mCanWriteToStorage == false)
+		{
+			menu.findItem(R.id.menu_editor_save).setEnabled(false);
+			menu.findItem(R.id.menu_editor_load).setEnabled(false);
+		}
 	}
 	
 	@Override

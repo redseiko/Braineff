@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <item
         android:id="@+id/menu_editor_compile"
-        android:showAsAction="ifRoom"
         android:title="@string/menu_editor_compile"
-        android:titleCondensed="@string/menu_editor_compile_condensed"/>
+        android:titleCondensed="@string/menu_editor_compile_condensed"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/menu_editor_save"
-        android:showAsAction="never"
         android:title="@string/menu_editor_save"
-        android:titleCondensed="@string/menu_editor_save_condensed"/>
+        android:titleCondensed="@string/menu_editor_save_condensed"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/menu_editor_load"
-        android:showAsAction="never"
         android:title="@string/menu_editor_load"
-        android:titleCondensed="@string/menu_editor_load_condensed"/>
+        android:titleCondensed="@string/menu_editor_load_condensed"
+        app:showAsAction="never"/>
 
 </menu>

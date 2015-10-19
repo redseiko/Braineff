@@ -5,14 +5,20 @@
     android:orientation="vertical" >
 
     <TextView
+        style="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingTop="8dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
         android:text="@string/console_output_title"
-        android:textSize="20sp"
         android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ddd" />
 
     <TextView
         android:id="@+id/console_output"
@@ -21,7 +27,7 @@
         android:layout_margin="8dp"
         android:layout_weight="1"
         android:background="#ffefefef"
-        android:gravity="top|left"
+        android:gravity="top|start"
         android:padding="8dp"
         android:scrollHorizontally="true"
         android:scrollbars="horizontal|vertical"
@@ -29,23 +35,29 @@
         android:typeface="monospace" />
 
     <TextView
+        android:id="@+id/console_input_title"
+        style="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
         android:text="@string/console_input_title"
-        android:textSize="20sp"
         android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ddd" />
 
     <EditText
         android:id="@+id/console_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#ffefefef"
+        android:background="@null"
         android:inputType="text|textNoSuggestions"
-        android:padding="8dp"
-        android:typeface="monospace"
-        android:textSize="14sp" />
+        android:padding="15dp"
+        android:typeface="monospace" />
 
 </LinearLayout>

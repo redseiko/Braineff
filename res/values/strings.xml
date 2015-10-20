@@ -13,19 +13,22 @@
     <string name="kb_backspace">\u2190</string>
     <string name="kb_space">sp</string>
     <string name="kb_enter">\u21b2</string>
-    <string name="menu_main_settings">Settings</string>
     <string name="menu_editor_compile">Compile File</string>
     <string name="menu_editor_compile_condensed">Compile</string>
-    <string name="menu_editor_save">Save File</string>
-    <string name="menu_editor_save_condensed">Save</string>
-    <string name="menu_editor_load">Load File</string>
-    <string name="menu_editor_load_condensed">Load</string>
     <string name="editor_filename_hint">(untitled)</string>
+    
+    <string name="interepter_toolbar_title">Interpreter</string>
     
     <string name="menu_console_run">Run</string>
     
     <string name="console_output_title">Console Output</string>
     <string name="console_input_title">Console Input</string>
+    
+    <string name="drawer_compile_title">Compile</string>
+    <string name="drawer_open_file_title">Open File</string>
+    <string name="drawer_save_file_title">Save File</string>
+    <string name="drawer_settings_title">Settings</string>
+    <string name="drawer_about_braineff">About Braineff</string>
     
     <string name="save_file_fragment_title">Save file as&#8230;</string>
     <string name="save_file_filename_hint">untitled.bf</string>

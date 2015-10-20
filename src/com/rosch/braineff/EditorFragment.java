@@ -83,12 +83,6 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
 	{
 		inflater.inflate(R.menu.editor_fragment, menu);
-		
-		if (mCanWriteToStorage == false)
-		{
-			menu.findItem(R.id.menu_editor_save).setEnabled(false);
-			menu.findItem(R.id.menu_editor_load).setEnabled(false);
-		}
 	}
 	
 	@Override
@@ -98,14 +92,6 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 		{
 		case R.id.menu_editor_compile:
 			onEditorCompile();
-			break;
-			
-		case R.id.menu_editor_save:
-			onEditorSave();
-			break;
-			
-		case R.id.menu_editor_load:
-			onEditorLoad();
 			break;
 		}
 		

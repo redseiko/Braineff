@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <group
+        android:id="@+id/compiler_items"
+        android:checkableBehavior="single" >
+        <item
+            android:id="@+id/compile"
+            android:checked="false"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:title="@string/drawer_compile_title"/>
+    </group>
+    <group
+        android:id="@+id/editor_items"
+        android:checkableBehavior="single" >
+        <item
+            android:id="@+id/open_file"
+            android:checked="false"
+            android:icon="@drawable/ic_open_in_browser_black_24dp"
+            android:title="@string/drawer_open_file_title"/>
+        <item
+            android:id="@+id/save_file"
+            android:checked="false"
+            android:icon="@drawable/ic_save_black_24dp"
+            android:title="@string/drawer_save_file_title"/>
+    </group>
+    <group
+        android:id="@+id/other_items"
+        android:checkableBehavior="single" >
+        <item
+            android:id="@+id/settings"
+            android:checked="false"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/drawer_settings_title"/>
+        <item
+            android:id="@+id/about"
+            android:checked="false"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/drawer_about_braineff"/>
+    </group>
+
+</menu>

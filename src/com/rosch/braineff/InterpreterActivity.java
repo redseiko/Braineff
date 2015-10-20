@@ -2,13 +2,21 @@ package com.rosch.braineff;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 public class InterpreterActivity extends AppCompatActivity
 {
+	private Toolbar toolbar;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.interpeter_activity);
+		
+		toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);		
 		
 		Bundle arguments = getIntent().getExtras();
 		
@@ -26,7 +34,7 @@ public class InterpreterActivity extends AppCompatActivity
 		
 		getFragmentManager()
 			.beginTransaction()
-			.replace(android.R.id.content, fragment, "console_fragment")
+			.replace(R.id.fragment_container, fragment, "console_fragment")
 			.commit();
 	}
 	

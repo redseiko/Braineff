@@ -4,18 +4,9 @@
 
     <item
         android:id="@+id/menu_editor_compile"
+        android:icon="@drawable/ic_build_white_24dp"
         android:title="@string/menu_editor_compile"
         android:titleCondensed="@string/menu_editor_compile_condensed"
         app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/menu_editor_save"
-        android:title="@string/menu_editor_save"
-        android:titleCondensed="@string/menu_editor_save_condensed"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/menu_editor_load"
-        android:title="@string/menu_editor_load"
-        android:titleCondensed="@string/menu_editor_load_condensed"
-        app:showAsAction="never"/>
 
 </menu>

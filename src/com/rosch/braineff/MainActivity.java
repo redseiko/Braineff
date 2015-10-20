@@ -2,18 +2,25 @@ package com.rosch.braineff;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity
 {
+	private Toolbar mainToolbar;
+    private DrawerLayout drawerLayout;	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.main_activity);
+		
+		setupToolbar();
+		setupNavigationDrawer();
 		
 		if (getFragmentManager().findFragmentByTag("editor_fragment") == null)
 		{
@@ -25,20 +32,22 @@ public class MainActivity extends AppCompatActivity
 		}
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		if (super.onCreateOptionsMenu(menu) == false)
-			return false;
-		
-		getMenuInflater().inflate(R.menu.main_activity, menu);
-		
-		return true;
-	}
+    private void setupToolbar()
+    {
+    	mainToolbar = (Toolbar) findViewById(R.id.toolbar);
+    	setSupportActionBar(mainToolbar);
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item)
-	{			
-		return super.onOptionsItemSelected(item);
-	}
+    	getSupportActionBar().setHomeButtonEnabled(true);
+    	getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    
+    private void setupNavigationDrawer()
+    {
+    	drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+    	ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
+    		this, drawerLayout, mainToolbar, android.R.string.yes, android.R.string.no);
+
+    	drawerLayout.setDrawerListener(drawerToggle);
+    	drawerToggle.syncState();
+    }
 }

@@ -98,7 +98,7 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 		return super.onOptionsItemSelected(item);
 	}
 		
-	private void onEditorCompile()
+	public void onEditorCompile()
 	{
 		Intent intent = new Intent(getActivity(), InterpreterActivity.class);
 		
@@ -108,7 +108,7 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 		getActivity().overridePendingTransition(R.anim.right_slide_in, R.anim.left_slide_out);
 	}
 	
-	private boolean onEditorSave()
+	public boolean onEditorSave()
 	{		
 		TextView filenameTextView = (TextView) getView().findViewById(R.id.file_filename);
 		EditText contentsEditText = (EditText) getView().findViewById(R.id.file_contents);
@@ -127,7 +127,7 @@ public class EditorFragment extends Fragment implements View.OnClickListener,
 		return true;
 	}
 	
-	private boolean onEditorLoad()
+	public boolean onEditorLoad()
 	{
 		LoadFileFragment fragment = new LoadFileFragment();
 		
